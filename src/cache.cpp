@@ -87,8 +87,7 @@ void Cache :: update(const long long int &address)
 	{
 		if(this->cache[i].getBlock() == -1)
 			continue;
-		if(this->cache[i].getBlock() == block && 
-			(this->replPolicy == 'l'))
+		if((this->cache[i].getBlock() == block))
 		{
 			this->cache[i].setTime(1);
 		}

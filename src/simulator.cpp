@@ -12,13 +12,14 @@ double missRatio;
 
 Cache cache;
 
-void sim(const string &str)
+void sim(const string &str,const char &repl)
 {
 	long long int address = hexToDec(str);
 	//cout<<address<<" "<<address/blockSize<<" "<<(address/blockSize)%8<<endl;
 	if(cache.exist(address))
 	{
-		cache.update(address);
+		if(repl == 'l')
+			cache.update(address);
 	}
 	else
 	{
@@ -33,11 +34,12 @@ void simulate(ifstream &inFile,const char &asso,const char &repl)
 {
 	inFile.seekg(ios::beg);
 	string str;
+	ctr = 0,total = 0;
 	cache.set(asso,repl);
 	while(inFile>>str)
 	{
 	//	cache.print();
-		sim(str);
+		sim(str,repl);
 	}
 	missRatio = (double)ctr/total;
 	cout<<fixed<<missRatio<<" ";

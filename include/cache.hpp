@@ -7,7 +7,7 @@
 using namespace std;
 
 const int blockSize = 16;
-const int cacheSize = 128;
+const int cacheSize = 512;
 
 class Block
 {
