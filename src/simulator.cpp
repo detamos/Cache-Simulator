@@ -40,12 +40,12 @@ void simulate(ifstream &inFile,const char &asso,const char &repl)
 		sim(str);
 	}
 	missRatio = (double)ctr/total;
-	cout<<fixed<<missRatio<<endl;
+	cout<<fixed<<missRatio<<" ";
 }
 
 int main(int argc,char *argv[])
 {
-	if(argc < 2)
+	if(argc < 3)
 	{
 		cout<<"Less Nubmer of Arguments.\n";
 		return  0;
@@ -61,10 +61,9 @@ int main(int argc,char *argv[])
 		return 0;
 	}
 
-	char asso,repl;
-	cin>>asso>>repl;
+	char asso = argv[2][0],repl = argv[2][1];
 	simulate(inFile,asso,repl);
-	
+
 	inFile.close();
 	return 0;
 }
