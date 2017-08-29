@@ -15,7 +15,6 @@ Cache cache;
 void sim(const string &str,const char &repl)
 {
 	long long int address = hexToDec(str);
-	//cout<<address<<" "<<address/blockSize<<" "<<(address/blockSize)%8<<endl;
 	if(cache.exist(address))
 	{
 		if(repl == 'l')

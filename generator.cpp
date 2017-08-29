@@ -20,11 +20,11 @@ string toHex(long long int num)
 int main()
 {
 	srand(time(NULL));
-	int n = 16384;
+	int n = 8192;
 	for(int i=0;i<10000;i++)
 	{
 		long long int num = rand()%n;
-		cout<<num<<" "<<toHex(num)<<endl;
+		cout<<toHex(num)<<endl;
 	}
 	return 0;
 }
